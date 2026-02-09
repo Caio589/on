@@ -198,3 +198,15 @@ footer {
     font-size: 2rem;
   }
 }
+/* ---------- ANIMAÇÃO DE ENTRADA SUAVE ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
