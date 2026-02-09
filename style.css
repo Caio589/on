@@ -139,6 +139,44 @@ body {
   font-size: 0.95rem;
 }
 
+/* ---------- FEEDBACKS ---------- */
+
+.feedbacks {
+  background: var(--bg-main);
+}
+
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.feedback-card {
+  background: var(--bg-card);
+  padding: 26px;
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+
+.stars {
+  color: #facc15;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.comment {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.author {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
 /* ---------- FOOTER ---------- */
 
 footer {
