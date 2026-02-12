@@ -1,27 +1,41 @@
 :root {
-  --bg-main: #f8fafc;      /* fundo principal */
-  --bg-card: #ffffff;     /* cards */
-  --bg-dark: #e5e7eb;     /* seções alternadas */
-  --text-main: #0f172a;   /* texto principal */
-  --text-muted: #475569;  /* texto secundário */
-  --accent: #2563eb;      /* azul corporativo */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-dark: #eef2f7;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.12);
 }
 
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ANIMAÇÃO GLOBAL */
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.65;
+  animation: fadeIn 0.8s ease forwards;
 }
 
-/* ---------- LAYOUT ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* LAYOUT */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -29,184 +43,135 @@ body {
 }
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 90px 20px;
 }
 
 .dark {
-  background: var(--bg-dark);
+  background: linear-gradient(
+    180deg,
+    var(--bg-dark),
+    #e9eef5
+  );
 }
 
-/* ---------- HERO ---------- */
-
+/* HERO */
 .hero {
   text-align: center;
 }
 
 .logo {
   display: block;
-  margin: 0 auto 36px auto;
+  margin: 0 auto 36px;
   max-width: 180px;
-  width: 100%;
-  height: auto;
 }
 
 .hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
+  font-size: 2.6rem;
+  margin-bottom: 22px;
+  letter-spacing: -0.5px;
 }
 
 .hero p {
   max-width: 760px;
   margin: auto;
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
-/* ---------- BOTÃO ---------- */
-
+/* BOTÃO */
 .actions {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .btn {
-  padding: 15px 38px;
-  border-radius: 6px;
+  padding: 16px 44px;
+  border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
+  transition: all 0.25s ease;
 }
 
 .primary {
   background: var(--accent);
   color: #ffffff;
+  box-shadow: 0 10px 30px var(--accent-soft);
 }
 
 .primary:hover {
   background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px var(--accent-soft);
 }
 
-/* ---------- TEXTOS ---------- */
-
+/* TEXTOS */
 .section h2 {
-  font-size: 1.6rem;
-  margin-bottom: 30px;
+  font-size: 1.7rem;
+  margin-bottom: 34px;
+  letter-spacing: -0.3px;
 }
 
 .text {
   max-width: 760px;
-  margin-bottom: 35px;
+  margin-bottom: 38px;
   color: var(--text-muted);
 }
 
-/* ---------- GRID / CARDS ---------- */
-
+/* GRID / CARDS */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 22px;
+  gap: 26px;
 }
 
 .card {
   background: var(--bg-card);
-  padding: 28px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  padding: 32px;
+  border-radius: 14px;
   font-size: 0.95rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
 }
 
-/* ---------- PROCESSO ---------- */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
 
+/* PROCESSO */
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
+  gap: 32px;
 }
 
 .steps strong {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--accent);
   margin-bottom: 6px;
 }
 
-/* ---------- AUTORIDADE ---------- */
-
+/* AUTORIDADE */
 .authority {
   max-width: 820px;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
 }
 
-/* ---------- FEEDBACKS ---------- */
-
-.feedbacks {
-  background: var(--bg-main);
-}
-
-.feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.feedback-card {
-  background: var(--bg-card);
-  padding: 26px;
-  border-radius: 12px;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
-}
-
-.stars {
-  color: #facc15;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-}
-
-.comment {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-  line-height: 1.6;
-}
-
-.author {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-main);
-}
-
-/* ---------- FOOTER ---------- */
-
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 34px;
   font-size: 0.85rem;
   color: var(--text-muted);
   background: #f1f5f9;
 }
 
-/* ---------- RESPONSIVO ---------- */
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .container {
-    padding: 70px 18px;
-  }
-
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
-}
-/* ---------- ANIMAÇÃO DE ENTRADA SUAVE ---------- */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
