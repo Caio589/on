@@ -240,3 +240,82 @@ footer {
     font-size: 2.3rem;
   }
 }
+/* ---------- AJUSTES MOBILE (SITE GRANDE) ---------- */
+
+@media (max-width: 768px) {
+
+  /* Layout geral */
+  .container,
+  .section {
+    padding: 70px 18px;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 80px;
+  }
+
+  /* LOGO */
+  .logo {
+    width: 180px;
+    margin-bottom: 30px;
+  }
+
+  /* TÍTULO PRINCIPAL */
+  .hero h1 {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+
+  /* TEXTO */
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* BOTÃO */
+  .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 0;
+    font-size: 1rem;
+  }
+
+  .actions {
+    margin-top: 40px;
+  }
+
+  /* TÍTULOS DAS SEÇÕES */
+  .section h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  /* TEXTOS DAS SEÇÕES */
+  .text,
+  .authority {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  /* GRIDS */
+  .grid,
+  .steps,
+  .feedback-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* CARDS */
+  .card,
+  .feedback-card {
+    padding: 28px;
+  }
+
+  /* FOOTER */
+  footer {
+    font-size: 0.8rem;
+    padding: 28px 15px;
+  }
+}
