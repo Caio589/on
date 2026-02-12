@@ -74,26 +74,28 @@ body {
   z-index: -1;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 45px;
-  max-width: 200px;
-}
+/* ---------- LOGO MAIOR E CENTRALIZADA ---------- */
 
-.hero h1 {
-  font-size: 3.1rem;
-  margin-bottom: 26px;
-  line-height: 1.1;
-  letter-spacing: -1px;
+.logo {
+  width: 260px;          /* AUMENTA no desktop */
+  max-width: 95%;
+  height: auto;
+  margin: 0 auto 50px auto;
+  display: block;
+
+  -webkit-mask-image: url("images/logo-co-sistemas.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 
   background: linear-gradient(
     90deg,
-    var(--blue),
-    var(--purple),
-    var(--cyan)
+    #3b82f6,
+    #8b5cf6,
+    #22d3ee
   );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 0 35px rgba(59,130,246,0.5));
 }
 
 .hero p {
